@@ -1,0 +1,13 @@
+.popular {
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+}
+
+.title {
+    text-align: center;
+}
