@@ -12,7 +12,7 @@ namespace bh_server_app.Services.Interface
         // Task<IEnumerable<DiscussionDTO>> GetDiscussionsByUserId(int userId);
         void GetDiscussionsByUserId(int userId);
         Task<IEnumerable<DiscussionDTO>> GetDiscussionsByBookId(int bookId);
-        Task<DiscussionDTO> CreateDiscussion(DiscussionDTO discussionDTO);
+        DiscussionDTO CreateDiscussion(DiscussionDTO discussionDTO);
         Task<DiscussionDTO> UpdateDiscussion(int id, DiscussionDTO discussionDTO);
         Task DeleteDiscussion(int id);
     }

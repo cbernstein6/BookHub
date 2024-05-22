@@ -38,10 +38,10 @@ namespace bh_server_app.Controllers
         }
 
         [HttpPost]
-        public async void CreateDiscussion(DiscussionDTO discussionDTO)
+        public DiscussionDTO CreateDiscussion(DiscussionDTO discussionDTO)
         {
-            var createdDiscussion = await _discussionService.CreateDiscussion(discussionDTO);
-            // return CreatedAtAction(nameof(GetDiscussion), new { id = createdDiscussion.Id }, createdDiscussion);
+            var createdDiscussion = _discussionService.CreateDiscussion(discussionDTO);
+            return createdDiscussion;
         }
 
         [HttpPut("{id}")]
