@@ -32,6 +32,12 @@ namespace bh_server_app.Services.Services
             return _mapper.Map<IEnumerable<BookDTO>>(books);
         }
 
+        public async Task<IEnumerable<BookDTO>> GetBooksBySeries(string title)
+        {
+            IEnumerable<Book> books = _context.Books.Where(x => x.Series == title).ToList();
+            return _mapper.Map<IEnumerable<BookDTO>>(books);
+        }
+
         public async Task<Book> CreateBook(BookDTO bookDTO)
         {   Console.WriteLine("Working");
             var book = _mapper.Map<Book>(bookDTO);
@@ -62,13 +68,13 @@ namespace bh_server_app.Services.Services
             return _mapper.Map<BookDTO>(book);
         }
 
-        public async Task DeleteBook(int id)
+        public void DeleteBook(int id)
         {
-            var book = await _context.Books.FindAsync(id);
+            var book = _context.Books.Find(id);
             if (book != null)
             {
                 _context.Books.Remove(book);
-                await _context.SaveChangesAsync();
+                _context.SaveChanges();
             }
         }
     }

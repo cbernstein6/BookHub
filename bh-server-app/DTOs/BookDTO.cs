@@ -15,5 +15,6 @@ namespace bh_server_app.DTOs
         public string ImagePath { get; set; }
         public string DownloadUrl { get; set; }
         public DateTime ReleaseDate { get; set; }
+        public string Series { get; set; }
     }
 }

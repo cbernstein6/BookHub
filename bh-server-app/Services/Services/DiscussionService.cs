@@ -42,11 +42,11 @@ namespace bh_server_app.Services.Services
             // return _mapper.Map<IEnumerable<DiscussionDTO>>(discussions);
         }
 
-        public async Task<DiscussionDTO> CreateDiscussion(DiscussionDTO discussionDTO)
+        public DiscussionDTO CreateDiscussion(DiscussionDTO discussionDTO)
         {
             var discussion = _mapper.Map<Discussion>(discussionDTO);
             _context.Discussions.Add(discussion);
-            await _context.SaveChangesAsync();
+            _context.SaveChanges();
             return _mapper.Map<DiscussionDTO>(discussion);
         }
 

@@ -11,9 +11,10 @@ namespace bh_server_app.Services.Interface
     {
         Task<BookDTO> GetBookById(int id);
         Task<IEnumerable<BookDTO>> GetAllBooks();
+        Task<IEnumerable<BookDTO>> GetBooksBySeries(string title);
         Task<Book> CreateBook(BookDTO bookDTO);
         Task<BookDTO> UpdateBook(BookDTO bookDTO);
         Task<BookDTO> ChangeActive(int bookId);
-        Task DeleteBook(int id);
+        void DeleteBook(int id);
     }
 }

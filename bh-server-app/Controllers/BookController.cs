@@ -38,6 +38,13 @@ namespace bh_server_app.Controllers
             return Ok(books);
         }
 
+        [HttpGet("series/{title}")]
+        public async Task<IActionResult> GetBooksBySeries(string title)
+        {
+            var books = await _bookService.GetBooksBySeries(title);
+            return Ok(books);
+        }
+
         [HttpPost]
         public async Task<Book> CreateBook(BookDTO bookDTO)
         {
@@ -61,9 +68,9 @@ namespace bh_server_app.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async void DeleteBook(int id)
+        public void DeleteBook(int id)
         {
-            await _bookService.DeleteBook(id);
+            _bookService.DeleteBook(id);
         }
     }
 }

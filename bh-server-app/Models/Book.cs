@@ -18,6 +18,7 @@ namespace bh_server_app.Models
         public string DownloadUrl { get; set; }
         public DateTime ReleaseDate { get; set; }
         public Boolean IsActive { get; set; } = true;
+        public string Series { get; set; }
 
     }
 }
